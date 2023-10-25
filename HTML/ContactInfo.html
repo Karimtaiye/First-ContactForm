@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info</title>
+    <link rel="stylesheet" href="./JS/ContactInfo.css">
+</head>
+
+<body class="Main">
+    <a  href="./Contact-Form.html" style="color: white; position: absolute; top: 5%; left: 5%;">Back</a>
+    <h1>Contacts List</h1>
+
+        <div id="container">
+            
+        </div>
+      
+</body>
+<script>
+    let Datas = localStorage.getItem('UserInfo');
+    // console.log("did");
+    Details = JSON.parse(Datas)
+    const container = document.querySelector('#container')
+    Details.forEach((Details)=>{
+        let lists = document.createElement('p')
+        lists.innerHTML =
+        'Name: ' + Details.UserName + 
+      ', Email: ' + Details.Usermail + 
+      ', Phone: ' + Details.Userphone + 
+      ', Group: ' +  Details.Group;
+      container.appendChild(lists)  
+    }
+    )
+    
+</script>
+</html>
